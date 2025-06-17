@@ -8,8 +8,10 @@ import jakarta.validation.constraints.NotEmpty;
 
 @Document(collection  = "authors")
 public class Author {
+
+	// the main issue you had is here, Id is not the same as id, it wasn't mapped to your db properly
 	@MongoId
-	private String Id;
+	private String id;
 	@NotEmpty
 	private String name;
 	@Email
@@ -18,10 +20,10 @@ public class Author {
 
 	
 	public String getId() {
-		return Id;
+		return id;
 	}
 	public void setId(String id) {
-		Id = id;
+		id = id;
 	}
 	public String getName() {
 		return name;

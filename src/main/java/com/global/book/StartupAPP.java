@@ -10,6 +10,8 @@ import com.global.book.entity.Author;
 import com.global.book.repo.AuthorRepo;
 @Component
 public class StartupAPP implements CommandLineRunner {
+
+	// same here it's better to use constructor injection instead of autowiring for better testability
 @Autowired
 	private AuthorRepo authrepo;
 	public void run(String... args) throws Exception {
